@@ -50,43 +50,15 @@ Jalankan perintah berikut untuk fetch data dari `https://rajaongkir.com/dokument
 `php artisan fetch-store:cities`
 
 # Testing Web Service
+
 ## 1. Alur testing web service
-### 1.1 Register user
-Paste url berikut untuk mendaftarkan user agar bisa mengakses data yang dibutuhkan. Data yang dibutuhkan adalah `name`, `email`, `password`, dan `password_confirmation`. Isikan data tersebut ke dalam `body`.
 
-`http://localhost:8000/api/register`
-
-Jika berhasil, response yang didapat adalah
-
-```json
-{
-    "success": true,
-    "token": "5|YJ3LGpSoq***************************************"
-}
-```
-
-### 1.2 Login user
-Untuk mengakses data, user harus melakukan login ke dalam service. Ketikkan url berikut
-
-`http://localhost:8000/api/login`
-
-Jika berhasil, response yang didapat sebagai berikut
-
-```json
-{
-    "success": true,
-    "token": "6|SOsxoWF5M***************************************"
-}
-```
-
-Token yang didapat setelah melakukan login, akan digunakan untuk autentikasi user.
-
-### 1.3 Akses data
-Untuk mengetahui apakah aplikasi berhasil dijalankan, coba paste url berikut ke postman. Jangan lupa untuk menambahkan token yang sudah diperoleh melalui proses login. Di tab `Authorization`, pilih `Bearer Token` dan isikan token yang sudah didapat pada kolom `Token`.
-
-![alt text](https://github.com/rahadianap/test-dot-indonesia/blob/sprint1/Screenshot.png?raw=true)
+### 1.1 Akses data
+Untuk mengetahui apakah aplikasi berhasil dijalankan, coba paste url berikut ke postman. Jangan lupa untuk menambahkan query parameter id.
 
 `http://localhost:8000/api/search/provinces?id=1`
+
+![alt text](https://github.com/rahadianap/test-dot-indonesia/blob/sprint1/Screenshot.png?raw=true)
 
 Jika berhasil, response yang didapat sebagai berikut
 
@@ -100,11 +72,6 @@ Jika berhasil, response yang didapat sebagai berikut
     }
 }
 ```
-
-### 1.4 Feature testing
-Untuk menjalankan feature testing yang sudah dibuat, jalankan perintah `php artisan test`.
-
-![alt text](https://github.com/rahadianap/test-dot-indonesia/blob/sprint1/Screenshot2.png?raw=true)
 
 ## 2. Route list
 ### 2.1 Pencarian Data Province dan City Berdasarkan id
