@@ -9,6 +9,11 @@ use App\Models\Province;
 
 class ProvinceController extends Controller
 {
+    public function __construct(protected Province $province)
+    {   
+
+    }
+
     public function searchProvince(Request $request)
     {
         try {

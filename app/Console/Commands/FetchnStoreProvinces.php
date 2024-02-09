@@ -31,7 +31,7 @@ class FetchnStoreProvinces extends Command
         $baseUrl = 'https://api.rajaongkir.com/starter/province';
 
         $response = Http::get($baseUrl, [
-            'key' => '0df6d5bf733214af6c6644eb8717c92c'
+            'key' => env('API_KEY_RAJAONGKIR')
         ]);
 
         $result = json_decode($response->getBody(), true);

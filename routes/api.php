@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,10 @@ use App\Http\Controllers\CityController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/search/provinces', [App\Http\Controllers\ProvinceController::class, 'searchProvince']);
-Route::get('/search/cities', [App\Http\Controllers\CityController::class, 'searchCity']);
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('/search/provinces', [ProvinceController::class, 'searchProvince']);
+    Route::get('/search/cities', [CityController::class, 'searchCity']);
+});
