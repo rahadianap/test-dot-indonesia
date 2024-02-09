@@ -49,8 +49,9 @@ Jalankan perintah berikut untuk fetch data dari `https://rajaongkir.com/dokument
 
 `php artisan fetch-store:cities`
 
-## 12. Alur testing web service
-### 12.1 Register user
+# Testing Web Service
+## 1. Alur testing web service
+### 1.1 Register user
 Paste url berikut untuk mendaftarkan user agar bisa mengakses data yang dibutuhkan. Data yang dibutuhkan adalah `name`, `email`, `password`, dan `password_confirmation`. Isikan data tersebut ke dalam `body`.
 
 `http://localhost:8000/api/register`
@@ -64,7 +65,7 @@ Jika berhasil, response yang didapat adalah
 }
 ```
 
-### 12.2 Login user
+### 1.2 Login user
 Untuk mengakses data, user harus melakukan login ke dalam service. Ketikkan url berikut
 
 `http://localhost:8000/api/login`
@@ -80,8 +81,7 @@ Jika berhasil, response yang didapat sebagai berikut
 
 Token yang didapat setelah melakukan login, akan digunakan untuk autentikasi user.
 
-### 12.3 Akses data
-
+### 1.3 Akses data
 Untuk mengetahui apakah aplikasi berhasil dijalankan, coba paste url berikut ke postman. Jangan lupa untuk menambahkan token yang sudah diperoleh melalui proses login. Di tab `Authorization`, pilih `Bearer Token` dan isikan token yang sudah didapat pada kolom `Token`.
 
 ![alt text](https://github.com/rahadianap/test-dot-indonesia/blob/sprint1/Screenshot.png?raw=true)
@@ -101,8 +101,13 @@ Jika berhasil, response yang didapat sebagai berikut
 }
 ```
 
-## 13. Route list
-### 1. Pencarian Data Province dan City Berdasarkan id
+### 1.4 Feature testing
+Untuk menjalankan feature testing yang sudah dibuat, jalankan perintah `php artisan test`.
+
+
+
+## 2. Route list
+### 2.1 Pencarian Data Province dan City Berdasarkan id
 ```
 Route::middleware('auth:sanctum')->group(function(){
     Route::get('/search/provinces', [ProvinceController::class, 'searchProvince']);
