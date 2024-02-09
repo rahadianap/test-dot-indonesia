@@ -104,7 +104,7 @@ Jika berhasil, response yang didapat sebagai berikut
 ### 1.4 Feature testing
 Untuk menjalankan feature testing yang sudah dibuat, jalankan perintah `php artisan test`.
 
-
+![alt text](https://github.com/rahadianap/test-dot-indonesia/blob/sprint1/Screenshot2.png?raw=true)
 
 ## 2. Route list
 ### 2.1 Pencarian Data Province dan City Berdasarkan id
