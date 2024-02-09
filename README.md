@@ -42,6 +42,13 @@ Untuk menjalankan service, cukup ketikkan perintah berikut.
 
 `php artisan serve`
 
+## 12. Fetch data dan insert ke database
+Jalankan perintah berikut untuk fetch data dari `https://rajaongkir.com/dokumentasi/starter` dan insert data ke database.
+
+`php artisan fetch-store:provinces`
+
+`php artisan fetch-store:cities`
+
 ## 12. Alur testing web service
 ### 12.1 Register user
 Paste url berikut untuk mendaftarkan user agar bisa mengakses data yang dibutuhkan. Data yang dibutuhkan adalah `name`, `email`, `password`, dan `password_confirmation`. Isikan data tersebut ke dalam `body`.
@@ -77,7 +84,7 @@ Token yang didapat setelah melakukan login, akan digunakan untuk autentikasi use
 
 Untuk mengetahui apakah aplikasi berhasil dijalankan, coba paste url berikut ke postman. Jangan lupa untuk menambahkan token yang sudah diperoleh melalui proses login. Di tab `Authorization`, pilih `Bearer Token` dan isikan token yang sudah didapat pada kolom `Token`.
 
-
+![alt text](https://github.com/rahadianap/test-dot-indonesia/blob/sprint1/Screenshot.png?raw=true)
 
 `http://localhost:8000/api/search/provinces?id=1`
 
